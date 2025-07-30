@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prolificszn</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">prolificszn</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
+    </div>
+    <div class="hamburger">☰</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Discover Your Style</h1>
+    <p>Shop the latest trends in fashion</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>Our Collection</h2>
+    <div class="product-grid" id="product-grid">
+      <div class="product-card" onclick="viewProduct('p1')">
+        <img src="images/p1.jpg" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$29.99</p>
+      </div>
+      <div class="product-card" onclick="viewProduct('p2')">
+        <img src="images/p2.jpg" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$39.99</p>
+      </div>
+      <div class="product-card" onclick="viewProduct('p3')">
+        <img src="images/p3.jpg" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$49.99</p>
+      </div>
+      <div class="product-card" onclick="viewProduct('p4')">
+        <img src="images/p4.jpg" alt="Product 4">
+        <h3>Product 4</h3>
+        <p>$59.99</p>
+      </div>
+      <div class="product-card" onclick="viewProduct('p5')">
+        <img src="images/p5.jpg" alt="Product 5">
+        <h3>Product 5</h3>
+        <p>$69.99</p>
+      </div>
+      <div class="product-card" onclick="viewProduct('p6')">
+        <img src="images/p6.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>$79.99</p>
+      </div>
+       <div class="product-card" onclick="viewProduct('p6')">
+        <img src="images/p13.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>$79.99</p>
+      </div>
+       <div class="product-card" onclick="viewProduct('p6')">
+        <img src="images/p12.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>$79.99</p>
+      </div>
+       <div class="product-card" onclick="viewProduct('p6')">
+        <img src="images/p7.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>$79.99</p>
+      </div>
+       <div class="product-card" onclick="viewProduct('p6')">
+        <img src="images/p8.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>$79.99</p>
+      </div>
+       <div class="product-card" onclick="viewProduct('p6')">
+        <img src="images/p9.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>$79.99</p>
+      </div>
+       <div class="product-card" onclick="viewProduct('p6')">
+        <img src="images/p10.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>$79.99</p>
+      </div>
+    </section>
+    <!--cart section part 1-->
+
+
+  <!-- Cart Section -->
+  <section id="cart" class="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="cart-total">
+      <h3>Total: $<span id="cart-total">0</span></h3>
+      <button class="btn" onclick="checkout()">Checkout</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 prolificszn. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
