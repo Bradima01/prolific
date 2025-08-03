@@ -91,6 +91,14 @@
       margin-top: 20px;
       font-size: 1.2em;
     }
+    @media (max-width: 768px) {
+      .product-section {
+        flex-direction: column;
+      }
+      .product-image {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -99,7 +107,7 @@
     <div class="product-section">
       <img src="images/p15.jpg" alt="Classic Denim Jacket" class="product-image">
       <div class="product-details">
-        <h2>Classic Denim Jacket</h2>
+        <h2>Classic shots</h2>
         <p>
           Elevate your wardrobe with our PROLIFIC Classic Denim Jacket, 
           designed for both style and comfort. Crafted from high-quality,
@@ -110,8 +118,8 @@
              Durable stitching ensures long-lasting wear, making it a
               versatile staple for any fashion-forward individual.
         </p>
-        <p class="price">ksh 4,999.99</p>
-        <button onclick="addToCart('Classic Denim Jacket', 4,999.99)">Add to Cart</button>
+        <p class="price">$3.99</p>
+        <button onclick="addToCart('Classic shots', 3.99)">Add to Cart</button>
       </div>
     </div>
 
