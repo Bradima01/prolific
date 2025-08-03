@@ -1,56 +1,10 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clothify - Product Details</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
-  <nav class="navbar">
-    <div class="logo">Clothify</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#products">Products</a>
-      <a href="index.html#cart">Cart (<span id="cart-count">0</span>)</a>
-    </div>
-    <div class="hamburger">☰</div>
-  </nav>
-
-
-  <section class="product-details">
-    <div class="product-container">
-      <img id="product-image" src="" alt="Product Image">
-      <div class="product-info">
-        <h1 id="product-name"></h1>
-        <p id="product-price"></p>
-        <p id="product-description"></p>
-        <label for="product-size">Size:</label>
-        <select id="product-size">
-          <option value="S">Small</option>
-          <option value="M">Medium</option>
-          <option value="L">Large</option>
-          <option value="XL">Extra Large</option>
-        </select>
-        <button class="btn" onclick="addToCart()">Add to Cart</button>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Clothify. All rights reserved.</p>
-  </footer>
-
-  <script src="product.js"></script>
-</body>
-</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clothing Store</title>
+  <title>products Store</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -143,14 +97,21 @@
   <div class="container">
     <!-- Product Description -->
     <div class="product-section">
-      <img src="https://via.placeholder.com/300x300?text=Clothing+Item" alt="Classic Denim Jacket" class="product-image">
+      <img src="images/p15.jpg" alt="Classic Denim Jacket" class="product-image">
       <div class="product-details">
         <h2>Classic Denim Jacket</h2>
         <p>
-          Elevate your wardrobe with our Classic Denim Jacket, designed for both style and comfort. Crafted from high-quality, 100% cotton denim, this jacket features a timeless blue wash, button-down front, and two chest pockets with flaps. Perfect for casual outings or layering over your favorite outfits, it offers a relaxed fit that suits all seasons. Durable stitching ensures long-lasting wear, making it a versatile staple for any fashion-forward individual.
+          Elevate your wardrobe with our PROLIFIC Classic Denim Jacket, 
+          designed for both style and comfort. Crafted from high-quality,
+           100% cotton denim, this jacket features a timeless blue wash,
+            button-down front, and two chest pockets with flaps.
+             Perfect for casual outings or layering over your favorite 
+             outfits, it offers a relaxed fit that suits all seasons. 
+             Durable stitching ensures long-lasting wear, making it a
+              versatile staple for any fashion-forward individual.
         </p>
-        <p class="price">$59.99</p>
-        <button onclick="addToCart('Classic Denim Jacket', 59.99)">Add to Cart</button>
+        <p class="price">ksh 4,999.99</p>
+        <button onclick="addToCart('Classic Denim Jacket', 4,999.99)">Add to Cart</button>
       </div>
     </div>
 
@@ -158,7 +119,7 @@
     <div class="cart-section">
       <h2>Shopping Cart</h2>
       <div id="cart-items"></div>
-      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-total" id="cart-total">Total: ksh0.00</div>
     </div>
   </div>
 
