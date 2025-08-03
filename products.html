@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar -->
+
   <nav class="navbar">
     <div class="logo">Clothify</div>
     <div class="nav-links">
@@ -18,7 +18,7 @@
     <div class="hamburger">☰</div>
   </nav>
 
-  <!-- Product Details Section -->
+
   <section class="product-details">
     <div class="product-container">
       <img id="product-image" src="" alt="Product Image">
@@ -38,11 +38,199 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Clothify. All rights reserved.</p>
   </footer>
 
   <script src="product.js"></script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-section {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .product-image {
+      max-width: 300px;
+      border-radius: 8px;
+    }
+    .product-details {
+      flex: 1;
+    }
+    .product-details h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .product-details p {
+      color: #666;
+      line-height: 1.6;
+    }
+    .product-details .price {
+      font-size: 1.5em;
+      color: #e44d26;
+      margin: 10px 0;
+    }
+    .product-details button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .product-details button:hover {
+      background-color: #218838;
+    }
+    .cart-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .cart-section h2 {
+      margin-top: 0;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    .cart-item span {
+      flex: 1;
+    }
+    .cart-item button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart-item button:hover {
+      background-color: #c82333;
+    }
+    .cart-total {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Product Description -->
+    <div class="product-section">
+      <img src="https://via.placeholder.com/300x300?text=Clothing+Item" alt="Classic Denim Jacket" class="product-image">
+      <div class="product-details">
+        <h2>Classic Denim Jacket</h2>
+        <p>
+          Elevate your wardrobe with our Classic Denim Jacket, designed for both style and comfort. Crafted from high-quality, 100% cotton denim, this jacket features a timeless blue wash, button-down front, and two chest pockets with flaps. Perfect for casual outings or layering over your favorite outfits, it offers a relaxed fit that suits all seasons. Durable stitching ensures long-lasting wear, making it a versatile staple for any fashion-forward individual.
+        </p>
+        <p class="price">$59.99</p>
+        <button onclick="addToCart('Classic Denim Jacket', 59.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div class="cart-section">
+      <h2>Shopping Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize cart from localStorage or create an empty array
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Function to save cart to localStorage
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Function to add item to cart
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      saveCart();
+      renderCart();
+    }
+
+    // Function to remove item from cart
+    function removeFromCart(name) {
+      cart = cart.filter(item => item.name !== name);
+      saveCart();
+      renderCart();
+    }
+
+    // Function to update item quantity
+    function updateQuantity(name, quantity) {
+      const item = cart.find(item => item.name === name);
+      if (item) {
+        item.quantity = parseInt(quantity);
+        if (item.quantity <= 0) {
+          removeFromCart(name);
+        } else {
+          saveCart();
+          renderCart();
+        }
+      }
+    }
+
+    // Function to render cart
+    function renderCart() {
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      cartItems.innerHTML = '';
+
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+        itemElement.innerHTML = `
+          <span>${item.name}</span>
+          <span>$${item.price.toFixed(2)}</span>
+          <span>
+            <input type="number" value="${item.quantity}" min="0" onchange="updateQuantity('${item.name}', this.value)">
+          </span>
+          <button onclick="removeFromCart('${item.name}')">Remove</button>
+        `;
+        cartItems.appendChild(itemElement);
+      });
+
+      cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    // Render cart on page load
+    renderCart();
+  </script>
 </body>
 </html>
